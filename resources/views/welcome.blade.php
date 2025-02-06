@@ -4,13 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
 
-    <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <header>
     <nav class="bg-red-600 border-gray-200 py-3 pl-16 pr-16">
         <div class="max-w-screen-xl mx-auto flex flex-col items-center">
-            <!-- Pages boven de search bar -->
             <ul class="flex flex-wrap justify-center space-x-6 text-white text-xs mb-2">
                 <li><a href="#" class="hover:underline font-medium">MediaMarkt App</a></li>
                 <li><a href="#" class="hover:underline font-medium">Alle favorieten</a></li>
@@ -37,14 +35,11 @@
             </ul>
 
             <div class="flex items-center justify-between w-full">
-                <!-- Logo -->
                 <a href="https://flowbite.com/" class="flex items-center">
                     <img class="h-7 w-58" src="https://cms-images.mmst.eu/jq6pdee2ul1f/33Tzg81ndenxjnDZISYBRc/d947f7276b1e173409e6ffeb73950df4/MM_logo_white__1_.svg?q=80" class="h-8" alt="Logo">
                 </a>
 
-                <!-- Language dropdown en Search bar -->
                 <div class="flex items-center space-x-4">
-                    <!-- Dropdown Button -->
                     <div class="relative">
                         <button id="dropdownButton" class="bg-red-600 border-2 border-white text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 pt-3 pb-3 pl-6 pr-6">
                             <svg
@@ -59,7 +54,6 @@
                             Alle categorieen
                         </button>
 
-                        <!-- Dropdown Menu -->
                         <div id="dropdownMenu" class="absolute hidden bg-white text-gray-700 shadow-lg mt-2 rounded-lg w-40">
                             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 1</a>
                             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 2</a>
@@ -67,7 +61,6 @@
                         </div>
                     </div>
 
-                    <!-- Search bar -->
                     <div class="relative w-80">
                         <input type="text" class="w-full p-2 pl-10 text-gray-800 border rounded-lg bg-white py-3" placeholder="Wat zoek je?">
                         <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
@@ -77,7 +70,7 @@
                         </div>
                     </div>
 
-                    <button id="dropdownButton" class="bg-red-600 border-2 border-none text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 pt-3 pb-3 pl-6 pr-6">
+                    <button id="dropdownButton" class="bg-red-600 border-2 border-none text-white rounded-lg font-semibold flex items-center gap-2 pt-2 pb-2 pl-6 pr-6">
                         <div class="flex items-start flex-col">
                             <div class="font-extrabold">
                                 Mijn winkel
@@ -131,24 +124,36 @@
     </nav>
 </header>
 <section>
-<div class="w-full h-12 bg-black">
-    <ul class="flex flex-row justify-around pt-3">
-        <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">Binnen 30 minuten ophalen</a></li>
-        <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">MediaMarkt App</a></li>
-        <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">Voor 23:59 besteld, morgen in huis</a></li>
-    </ul>
-</div>
+    <div class="w-full h-11 bg-black">
+        <ul class="flex flex-row justify-around pt-2">
+            <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">Binnen 30 minuten ophalen</a></li>
+            <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">MediaMarkt App</a></li>
+            <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">Voor 23:59 besteld, morgen in huis</a></li>
+        </ul>
+    </div>
 </section>
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold">Welcome to Laravel</h1>
-            <p class="mt-4">This is the home page.</p>
-
-            <!-- Link naar de home route -->
-            <a class="mt-6 inline-block px-4 py-2 bg-red-500 text-white rounded">Go to Home</a>
-        </div>
+<div class="flex space-x-4 pt-6">
+    <div class="w-70 h-52 border rounded-lg object-cover">
+        <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/3nBqYMH0H1s9EEu14umO53/e9aeabe13681d55403df4174a651cbaa/NL-favorieten-teaser-mobile.jpg?q=88&w=495" alt="Favorieten afbeelding" class="w-full h-full object-cover rounded-t-lg">
+        <h3 class="text-xl font-semibold mt-4">Onze favoriete producten</h3>
+        <p class="text-gray-700 mt-2">Ontdek onze beste keuzes in elke categorie</p>
     </div>
+
+    <div class="w-70 h-52 border rounded-lg object-cover">
+        <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/6F9suQpcfkfJ87w6Gj5g3H/51243054c95e43eee1422760198e5842/nl-w6-apponly-teaser-mobile.png?q=88&fm=jpg&w=495" alt="Favorieten afbeelding" class="w-full h-full object-cover rounded-t-lg">
+        <h3 class="text-xl font-semibold mt-4">Exclusieve aanbiedingen in onze App</h3>
+        <p class="text-gray-700 mt-2">Ontvang de beste kortingen, alleen via de app</p>
+    </div>
+
+    <div class="w-70 h-52 border rounded-lg object-cover">
+        <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/35huUTnDzTqpgLAhVnY1Ht/ce0b743220ba7d817a484e8bf3da35ff/nl-nvidia-rtx-teaser-mobile.png?q=88&fm=jpg&w=495" alt="Favorieten afbeelding" class="w-full h-full object-cover rounded-t-lg">
+        <h3 class="text-xl font-semibold mt-4">Change the game</h3>
+        <p class="text-gray-700 mt-2">Met de nieuwe NVDIA GeForce RTX 5090/5080</p>
+    </div>
+</div>
+
+
 </body>
 
 <script>
@@ -160,7 +165,6 @@
             dropdownMenu.classList.toggle("hidden");
         });
 
-        // Sluit de dropdown als je buiten klikt
         document.addEventListener("click", function (event) {
             if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
                 dropdownMenu.classList.add("hidden");
