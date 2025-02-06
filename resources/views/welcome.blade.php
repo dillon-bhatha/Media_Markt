@@ -133,9 +133,9 @@
 <section>
 <div class="w-full h-12 bg-black">
     <ul class="flex flex-row justify-around pt-3">
-        <li><a href="#" class="underline hover:no-underline font-medium text-white">Binnen 30 minuten ophalen</a></li>
-        <li><a href="#" class="underline hover:no-underline font-medium text-white">Business</a></li>
-        <li><a href="#" class="underline hover:no-underline font-medium text-white">Business</a></li>
+        <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">Binnen 30 minuten ophalen</a></li>
+        <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">MediaMarkt App</a></li>
+        <li><a href="#" class="underline hover:no-underline font-medium text-white text-sm">Voor 23:59 besteld, morgen in huis</a></li>
     </ul>
 </div>
 </section>
