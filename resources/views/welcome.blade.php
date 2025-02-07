@@ -134,48 +134,60 @@
 </section>
 <body class="font-sans antialiased">
     <section>
-        <div class="flex space-x-4 pt-6 flex-row justify-center">
-            <div class="w-90 h-52 border rounded-lg object-cover">
-                <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/3nBqYMH0H1s9EEu14umO53/e9aeabe13681d55403df4174a651cbaa/NL-favorieten-teaser-mobile.jpg?q=88&w=495" alt="Favorieten afbeelding" class="w-full h-full object-cover rounded-t-lg">
-                <p class="pt-7"><span class="border border-red-600 rounded-xl pl-1.5 pr-1.5 pb-1 pt-1 text-xs font-medium">Favorieten</span></p>
-                <h3 class="text-3xl font-black mt-4">Onze favoriete producten</h3>
-                <p class="text-gray-700 mt-2 font-medium">Ontdek onze beste keuzes in elke categorie</p>
-                <div class="flex justify-end">
-                    <button class="bg-white text-black font-semibold px-4 py-2 border border-black rounded-lg flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 mr-4">
+        <div class="flex space-x-4 pt-12 flex-row justify-center pb-7">
+            <div class="w-92 max-h-116 border border-gray-300 rounded-2xl pb-20 flex flex-col justify-between shadow-md">
+                <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/3nBqYMH0H1s9EEu14umO53/e9aeabe13681d55403df4174a651cbaa/NL-favorieten-teaser-mobile.jpg?q=88&w=495"
+                    alt="Favorieten afbeelding"
+                    class="w-full h-52 object-fit rounded-t-2xl">
+                <p class="pt-6 px-3">
+                    <span class="border border-red-600 rounded-xl px-2 py-1 text-xs font-medium">Favorieten</span>
+                </p>
+                <h3 class="text-3xl font-extrabold mt-4 px-3 italic">Onze favoriete producten</h3>
+                <p class="text-black mt-5 px-3">Ontdek onze beste keuzes in elke categorie</p>
+                <div class="flex justify-end mt-auto pt-6 pr-4">
+                    <button class="bg-white text-black font-semibold px-4 py-2 border border-black rounded-lg flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+                        <span>Bekijk</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 001.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 000 2h11.586l-3.293 3.293a1 1 0 000 1.414z" clip-rule="evenodd" />
                         </svg>
-                        <span>Bekijk</span>
                     </button>
                 </div>
             </div>
 
-            <div class="w-90 h-52 border rounded-lg object-cover">
-                <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/6F9suQpcfkfJ87w6Gj5g3H/51243054c95e43eee1422760198e5842/nl-w6-apponly-teaser-mobile.png?q=88&fm=jpg&w=495" alt="Favorieten afbeelding" class="w-full h-full object-cover rounded-t-lg">
-                <p class="pt-7"><span class="border border-red-600 rounded-xl pl-1.5 pr-1.5 pb-1 pt-1 text-xs font-medium">Favorieten</span></p>
-                <h3 class="text-3xl font-black mt-4">Exclusieve aanbiedingen in onze App</h3>
-                <p class="text-gray-700 mt-2 font-medium">Ontvang de beste kortingen, alleen via de app</p>
-                <div class="flex justify-end">
-                    <button class="bg-white text-black font-semibold px-4 py-2 border border-black rounded-lg flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 mr-4">
+            <div class="w-92 max-h-116 border border-gray-300 rounded-2xl pb-20 flex flex-col justify-between shadow-md">
+                <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/2su8B9eUIl0vw6iEjVei4p/0eba06513ba7c70865e329174bb7a4a0/NL-valentijn-teaser-mobile.jpg?q=88&w=495"
+                    alt="Favorieten afbeelding"
+                    class="w-full h-52 object-fit rounded-t-2xl">
+                <p class="pt-6 px-3">
+                    <span class="border border-red-600 rounded-xl px-2 py-1 text-xs font-medium">Favorieten</span>
+                </p>
+                <h3 class="text-3xl font-extrabold mt-4 px-3 italic">Valentijnsdag cadeau ideeën</h3>
+                <p class="text-black mt-5 px-3">Laat je inspireren om je geliefde te verwennen</p>
+                <div class="flex justify-end mt-auto pt-6 pr-4">
+                    <button class="bg-white text-black font-semibold px-4 py-2 border border-black rounded-lg flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+                        <span>Bekijk</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 001.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 000 2h11.586l-3.293 3.293a1 1 0 000 1.414z" clip-rule="evenodd" />
                         </svg>
-                        <span>Bekijk</span>
                     </button>
                 </div>
             </div>
 
-            <div class="w-90 h-52 border rounded-lg object-cover">
-                <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/35huUTnDzTqpgLAhVnY1Ht/ce0b743220ba7d817a484e8bf3da35ff/nl-nvidia-rtx-teaser-mobile.png?q=88&fm=jpg&w=495" alt="Favorieten afbeelding" class="w-full h-full object-cover rounded-t-lg">
-                <p class="pt-7"><span class="border border-red-600 rounded-xl pl-1.5 pr-1.5 pb-1 pt-1 text-xs font-medium">Favorieten</span></p>
-                <h3 class="text-3xl font-black mt-4">Change the game</h3>
-                <p class="text-gray-700 mt-2 font-medium">Met de nieuwe NVDIA GeForce RTX 5090/5080</p>
-                <div class="flex justify-end">
-                    <button class="bg-white text-black font-semibold px-4 py-2 border border-black rounded-lg flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 mr-4">
+            <div class="w-92 max-h-116 border border-gray-300 rounded-2xl pb-20 flex flex-col justify-between shadow-md">
+                <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/35huUTnDzTqpgLAhVnY1Ht/ce0b743220ba7d817a484e8bf3da35ff/nl-nvidia-rtx-teaser-mobile.png?q=88&fm=jpg&w=495" 
+                    alt="Favorieten afbeelding"
+                    class="w-full h-52 object-fit rounded-t-2xl">
+                <p class="pt-6 px-3">
+                    <span class="border border-red-600 rounded-xl px-2 py-1 text-xs font-medium">Favorieten</span>
+                </p>
+                <h3 class="text-3xl font-extrabold mt-4 px-3 italic">Change the game</h3>
+                <p class="text-black mt-5 px-3">Met de nieuwe NVIDIA GeForce RTX 5090/5080</p>
+                <div class="flex justify-end mt-auto pt-15 pr-4">
+                    <button class="bg-white text-black font-semibold px-4 py-2 border border-black rounded-lg flex items-center space-x-2 hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+                        <span>Bekijk</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 001.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 000 2h11.586l-3.293 3.293a1 1 0 000 1.414z" clip-rule="evenodd" />
                         </svg>
-                        <span>Bekijk</span>
                     </button>
                 </div>
             </div>
