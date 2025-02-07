@@ -13,3 +13,7 @@ Route::get('/', [MyController::class, 'index']);
 use App\Http\Controllers\ProductController;
 
 Route::get('/', [ProductController::class, 'index']);
+
+Route::get('/products', [ProductController::class, 'showProducts'])->name('products.index');
+
+Route::post('/update-rating/{product}', [ProductController::class, 'updateRating']);

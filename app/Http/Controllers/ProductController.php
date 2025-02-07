@@ -35,5 +35,26 @@ class ProductController extends Controller
 
         return redirect()->route('products.index');
     }
-}
 
+    public function showProducts()
+    {
+        $products = Product::where('favorite', true)
+                           ->orderByDesc('rating')
+                           ->take(12)
+                           ->get();
+
+        return view('products.index', compact('products'));
+    }
+
+    public function updateRating(Request $request, Product $product)
+    {
+        $request->validate([
+            'rating' => 'required|integer|between:1,5',
+        ]);
+
+        $product->rating = $request->rating;
+        $product->save();
+
+        return response()->json(['success' => true, 'rating' => $product->rating]);
+    }
+}

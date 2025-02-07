@@ -194,35 +194,141 @@
         </div>
     </section>
     <section class="py-16 bg-gray-200">
-    <ul>
-        @foreach ($products as $product)
-            <li>
-                <h3>{{ $product->name }}</h3>
-                <p>{{ $product->description }}</p>
-                <p>Prijs: €{{ $product->price }}</p>
-                <p>Voorraad: {{ $product->stock }}</p>
-                @if ($product->image_url)
-                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" style="width:100px;">
-                @endif
-            </li>
-        @endforeach
-    </ul>
+        <div class="relative overflow-hidden">
+            <div class="carousel-container flex transition-transform duration-500 ease-in-out">
+                @foreach ($products->chunk(4) as $chunk)
+                    @foreach ($chunk as $product)
+                        <div class="product w-full md:w-1/4 p-4">
+                            <div class="bg-white p-4 shadow rounded-lg">
+                                <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-t-lg">
+                                <h2 class="text-xl font-semibold mt-2">{{ $product->name }}</h2>
+                                <p class="text-gray-500">{{ $product->description }}</p>
+                                <p class="text-lg font-bold mt-2">€{{ number_format($product->price, 2) }}</p>
+
+                                <div class="flex mt-1" id="rating-container-{{ $product->id }}">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <svg
+                                            data-rating="{{ $i }}"
+                                            class="w-5 h-5 star {{ $i <= $product->rating ? 'text-red-500' : 'text-gray-300' }}"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            onclick="updateRating({{ $product->id }}, {{ $i }})"
+                                        >
+                                            <path d="M10 15l-3.5 2.5 1-4.3L2 7.8l4.3-.4L10 3l1.7 3.5 4.3.4-3.5 5.4 1 4.3L10 15z"/>
+                                        </svg>
+                                    @endfor
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endforeach
+            </div>
+
+            <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
+                &#60;
+            </button>
+            <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
+                &#62;
+            </button>
+        </div>
     </section>
+
 </body>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const dropdownButton = document.getElementById("dropdownButton");
-        const dropdownMenu = document.getElementById("dropdownMenu");
 
-        dropdownButton.addEventListener("click", function () {
-            dropdownMenu.classList.toggle("hidden");
-        });
-
-        document.addEventListener("click", function (event) {
-            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.add("hidden");
+    function updateRating(productId, rating) {
+        fetch(`/update-rating/${productId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({ rating: rating })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const stars = document.querySelectorAll(`#rating-container-${productId} .star`);
+                stars.forEach(star => {
+                    if (star.dataset.rating <= rating) {
+                        star.classList.add('text-red-500');
+                        star.classList.remove('text-gray-300');
+                    } else {
+                        star.classList.add('text-gray-300');
+                        star.classList.remove('text-red-500');
+                    }
+                });
+            } else {
+                alert('Er is iets mis gegaan. Probeer het later opnieuw.');
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Er is iets mis gegaan. Probeer het later opnieuw.');
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let currentIndex = 0;
+        const carouselContainer = document.querySelector('.carousel-container');
+        const products = document.querySelectorAll('.product');
+        const itemsToShow = 4;
+        const totalChunks = Math.ceil(products.length / itemsToShow);
+
+        function updateCarousel() {
+            products.forEach(product => {
+                product.style.display = 'none';
+            });
+
+            const start = currentIndex * itemsToShow;
+            const end = start + itemsToShow;
+            const currentChunk = Array.from(products).slice(start, end);
+            currentChunk.forEach(product => {
+                product.style.display = 'block';
+            });
+        }
+
+        function nextSlide() {
+            if (currentIndex + 1 < totalChunks) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            if (currentIndex - 1 >= 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalChunks - 1;
+            }
+            updateCarousel();
+        }
+
+        updateCarousel();
+
+        setInterval(nextSlide, 4000);
+
+        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('prev').addEventListener('click', prevSlide);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    dropdownButton.addEventListener("click", function () {
+        dropdownMenu.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add("hidden");
+        }
         });
     });
 </script>
