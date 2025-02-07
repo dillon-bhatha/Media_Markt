@@ -14,13 +14,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();  // Auto-increment ID
-            $table->string('name');  // Naam van het product
-            $table->text('description');  // Beschrijving van het product
-            $table->decimal('price', 10, 2);  // Prijs van het product
-            $table->integer('stock');  // Voorraad van het product
-            $table->string('image_url')->nullable();  // Optionele URL voor de afbeelding
-            $table->timestamps();  // timestamps voor created_at en updated_at
+            $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->decimal('price', 10, 2);
+            $table->integer('stock');
+            $table->string('image_url')->nullable();
+            $table->timestamps();
         });
     }
 
