@@ -193,6 +193,21 @@
             </div>
         </div>
     </section>
+    <section class="py-16 bg-gray-200">
+    <ul>
+        @foreach ($products as $product)
+            <li>
+                <h3>{{ $product->name }}</h3>
+                <p>{{ $product->description }}</p>
+                <p>Prijs: €{{ $product->price }}</p>
+                <p>Voorraad: {{ $product->stock }}</p>
+                @if ($product->image_url)
+                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" style="width:100px;">
+                @endif
+            </li>
+        @endforeach
+    </ul>
+    </section>
 </body>
 
 <script>

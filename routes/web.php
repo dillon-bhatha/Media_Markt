@@ -9,3 +9,7 @@ Route::get('/', function () {
 use App\Http\Controllers\MyController;
 
 Route::get('/', [MyController::class, 'index']);
+
+use App\Http\Controllers\ProductController;
+
+Route::get('/', [ProductController::class, 'index']);
