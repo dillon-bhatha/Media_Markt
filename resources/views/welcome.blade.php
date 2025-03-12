@@ -11,28 +11,28 @@
         <nav class="bg-red-600 border-gray-200 py-3 pl-16 pr-16">
             <div class="max-w-screen-xl mx-auto flex flex-col items-center">
                 <ul class="flex flex-wrap justify-center space-x-6 text-white text-xs mb-2">
-                    <li><a href="#" class="hover:underline font-medium">MediaMarkt App</a></li>
-                    <li><a href="#" class="hover:underline font-medium">Alle favorieten</a></li>
-                    <li><a href="#" class="hover:underline font-medium">Laatste kans</a></li>
-                    <li><a href="#" class="hover:underline font-medium">Business</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">MediaMarkt App</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">Alle favorieten</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">Laatste kans</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">Business</a></li>
                     <li>
-                        <a href="#" class="hover:underline font-medium flex items-center">
+                        <a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24">
                                 <path fill="white" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 13.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5Zm0-6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5Z"/>
                             </svg>
                             Klantenservice
                         </a>
                     </li>
-                    <li><a href="#" class="hover:underline font-medium">myMediaMarkt</a></li>
-                    <li><a href="#" class="hover:underline font-medium flex items-center">
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">myMediaMarkt</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 24 24" style="color: white;">
                         <path fill="white" d="M2.18 9.86A.49.49 0 0 1 2 9.32l.08-.25a.49.49 0 0 1 .44-.35l6.39-.51 2.45-5.89a.51.51 0 0 1 .51-.32h.26a.49.49 0 0 1 .47.32l2.46 5.89 6.39.51a.49.49 0 0 1 .44.35l.08.25a.49.49 0 0 1-.15.54L17 14l1.48 6.21a.51.51 0 0 1-.19.53l-.29.16a.5.5 0 0 1-.56 0L12 17.6l-5.47 3.33a.5.5 0 0 1-.56 0l-.22-.15a.51.51 0 0 1-.19-.53L7 14Z"/>
                     </svg>
                     Onze services</a></li>
-                    <li><a href="#" class="hover:underline font-medium">Telefoonabonnementen</a></li>
-                    <li><a href="#" class="hover:underline font-medium">Eigen merken</a></li>
-                    <li><a href="#" class="hover:underline font-medium">Ons advies</a></li>
-                    <li><a href="#" class="hover:underline font-medium">Vacatures</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">Telefoonabonnementen</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">Eigen merken</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">Ons advies</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current font-medium">Vacatures</a></li>
                 </ul>
 
                 <div class="flex items-center justify-between w-full">
@@ -236,43 +236,85 @@
         </div>
     </section>
 
-    <footer class="pl-16 pr-16 py-12 bg-zinc-200 text-white">
-        <div class="flex-colum">
+    <footer class="py-12 bg-zinc-200 text-white">
+        <div class="flex-colum pl-22 pb-16">
             <p class="text-black text-xl font-semibold pb-9">
                 Certificaten
             </p>
             <img class="h-20 w-20" src="https://images.ctfassets.net/jq6pdee2ul1f/1zDMD7CALoJxeLarkuVrjN/2ee158ed992a2d14fededd5ba52786d7/WOTY_badge-certified2025.svg">
         </div>
-        <div class="flex flex-row justify-between">
+        <div class="flex flex-row justify-around">
             <div>
                 <p class="text-black text-xl font-semibold pb-9">
-                    contact
+                    Contact
                 </p>
-                <div>
-                    <p class="text-gray-600">
-                        <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/2T7cU63B3w3DWZmMTWQHn6/0e36d4fcf0cbaecf16edc530539690ba/StyleGuideChat.svg?q=80">Veelgestelde vragen
-                    </p>
+                <div class="flex flex-row">
+                    <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/2T7cU63B3w3DWZmMTWQHn6/0e36d4fcf0cbaecf16edc530539690ba/StyleGuideChat.svg?q=80">
+                    <div>
+                        <p class="text-black">
+                        Veelgestelde vragen
+                        </p>
+                        <a href="#" class="text-black underline hover:no-underline">Vind je antwoord goed hier</a>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-gray-600">
-                        <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/3FiqapE5p94Hx7leMsaTOq/46ef67d45de4dec3d2c731e7f145e840/StyleGuideContact.svg?q=80">Nog meer vragen?
-                    </p>
+                <div class="flex flex-row">
+                    <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/3FiqapE5p94Hx7leMsaTOq/46ef67d45de4dec3d2c731e7f145e840/StyleGuideContact.svg?q=80">
+                    <div class="flex flex-col">
+                        <p class="text-black">
+                            Nog meer vragen?
+                        </p>
+                        <a href="#" class="text-black underline hover:no-underline">Vul het contactformulier in</a>
+                    </div>
                 </div>
             </div>
             <div>
                 <p class="text-black text-xl font-semibold pb-9">
-                    categorieen
+                    Categorieen
                 </p>
+                    <ul class="space-x-2 text-black text-s">
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Computer</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Tv</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Audio</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Keuken</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Huishouden</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Telefonie & Wearables</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Smart home & Wonen</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Foto & Video</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Gaming, Film & Muziek</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Verzorging & beweging</a></li>
+                        <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Black Friday 2025</a></li>
+                    </ul>
             </div>
             <div>
                 <p class="text-black text-xl font-semibold pb-9">
                     Over Mediamarkt
                 </p>
+                <ul class="space-x-2 text-black text-s mb-2">
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Winkels</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Duurzaamheid</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">MediaMarkt Business</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Cashbacks</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Over ons</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Juridische informatie</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Vacatures</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Affiliate-programma</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">MediaMarkt-kortingscodes</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Klachtenregeling mensenrechten en milieu</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Pers & PR</a></li>
+                </ul>
             </div>
             <div>
                 <p class="text-black text-xl font-semibold pb-9">
                     Services
                 </p>
+                <ul class="space-x-10 text-black text-s mb-2">
+                <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Telefoonabonnementen</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Verzekeringen</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Schermreperatie</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Thuis Internet, TV en Bellen</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Cadeaukaart</a></li>
+                    <li><a href="#" class="underline decoration-transparent transition-all duration-500 hover:decoration-current">Al onze services</a></li>
+                </ul>
             </div>
         </div>
     </footer>
