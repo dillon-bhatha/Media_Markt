@@ -236,12 +236,44 @@
         </div>
     </section>
 
-    <footer class="py-12 bg-zinc-200 text-white">
+    <footer class="pl-16 pr-16 py-12 bg-zinc-200 text-white">
         <div class="flex-colum">
-            <p class="text-black text-xl font-semibold">
+            <p class="text-black text-xl font-semibold pb-9">
                 Certificaten
             </p>
             <img class="h-20 w-20" src="https://images.ctfassets.net/jq6pdee2ul1f/1zDMD7CALoJxeLarkuVrjN/2ee158ed992a2d14fededd5ba52786d7/WOTY_badge-certified2025.svg">
+        </div>
+        <div class="flex flex-row justify-between">
+            <div>
+                <p class="text-black text-xl font-semibold pb-9">
+                    contact
+                </p>
+                <div>
+                    <p class="text-gray-600">
+                        <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/2T7cU63B3w3DWZmMTWQHn6/0e36d4fcf0cbaecf16edc530539690ba/StyleGuideChat.svg?q=80">Veelgestelde vragen
+                    </p>
+                </div>
+                <div>
+                    <p class="text-gray-600">
+                        <img src="https://cms-images.mmst.eu/jq6pdee2ul1f/3FiqapE5p94Hx7leMsaTOq/46ef67d45de4dec3d2c731e7f145e840/StyleGuideContact.svg?q=80">Nog meer vragen?
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p class="text-black text-xl font-semibold pb-9">
+                    categorieen
+                </p>
+            </div>
+            <div>
+                <p class="text-black text-xl font-semibold pb-9">
+                    Over Mediamarkt
+                </p>
+            </div>
+            <div>
+                <p class="text-black text-xl font-semibold pb-9">
+                    Services
+                </p>
+            </div>
         </div>
     </footer>
 </body>
