@@ -195,46 +195,125 @@
         </div>
     </section>
     <section class="py-16">
-        <div class="relative overflow-hidden">
-            <div class="carousel-container flex transition-transform duration-500 ease-in-out">
-                @foreach ($products->chunk(4) as $chunk)
-                    @foreach ($chunk as $product)
-                        <div class="product w-full md:w-1/4 p-4">
-                            <div class="bg-white p-4 shadow rounded-lg">
-                                <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-t-lg">
-                                <h2 class="text-xl font-semibold mt-2">{{ $product->name }}</h2>
-                                <p class="text-gray-500">{{ $product->description }}</p>
-                                <p class="text-lg font-bold mt-2">€{{ number_format($product->price, 2) }}</p>
+    <div class="relative overflow-hidden">
+        <div id="carousel" class="carousel-container flex transition-transform duration-500 ease-in-out">
+            @foreach ($products->chunk(4) as $chunk)
+                @foreach ($chunk as $product)
+                    <div class="product w-full md:w-1/4 p-4">
+                        <div class="bg-white p-4 shadow rounded-lg">
+                            <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-t-lg">
+                            <h2 class="text-xl font-semibold mt-2">{{ $product->name }}</h2>
+                            <p class="text-gray-500">{{ $product->description }}</p>
+                            <p class="text-lg font-bold mt-2">€{{ number_format($product->price, 2) }}</p>
 
-                                <div class="flex mt-1" id="rating-container-{{ $product->id }}">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        <svg
-                                            data-rating="{{ $i }}"
-                                            class="w-5 h-5 star {{ $i <= $product->rating ? 'text-red-500' : 'text-gray-300' }}"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            onclick="updateRating({{ $product->id }}, {{ $i }})"
-                                        >
-                                            <path d="M10 15l-3.5 2.5 1-4.3L2 7.8l4.3-.4L10 3l1.7 3.5 4.3.4-3.5 5.4 1 4.3L10 15z"/>
-                                        </svg>
-                                    @endfor
-                                </div>
+                            <div class="flex mt-1" id="rating-container-{{ $product->id }}">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    <svg
+                                        data-rating="{{ $i }}"
+                                        class="w-5 h-5 star {{ $i <= $product->rating ? 'text-red-500' : 'text-gray-300' }}"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        onclick="updateRating({{ $product->id }}, {{ $i }})"
+                                    >
+                                        <path d="M10 15l-3.5 2.5 1-4.3L2 7.8l4.3-.4L10 3l1.7 3.5 4.3.4-3.5 5.4 1 4.3L10 15z"/>
+                                    </svg>
+                                @endfor
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 @endforeach
-            </div>
-
-            <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
-                &#60;
-            </button>
-            <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
-                &#62;
-            </button>
+            @endforeach
         </div>
-    </section>
+
+        <!-- Navigatieknoppen -->
+        <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
+            &#60;
+        </button>
+        <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
+            &#62;
+        </button>
+    </div>
+</section>
+
+    <section>
+    <div class="items-center flex justify-evenly pb-10 px-5">
+        <div class="flex flex-col items-center">
+            <div class="w-32 h-28 relative group perspective-1000">
+                <div class="w-full h-full absolute transition-transform duration-1000 transform-style-preserve-3d group-hover:rotate-y-360">
+                    <img class="w-full h-full rounded-full absolute backface-hidden"
+                        src="https://cms-images.mmst.eu/jq6pdee2ul1f/4y9xUdqvh2vydG6JcoxQIh/81c5638123aa09a770c97cb17ca5d86c/homepage-service-services.png?q=80&w=264">
+                    <div class="w-full h-full absolute backface-hidden rotate-y-180 flip-horizontal flex items-center justify-center bg-gray-200 rounded-full">
+                        <span class="text-sm font-semibold">Meer info</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-2 underline decoration-transparent transition-all duration-500 hover:decoration-current">Services</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="w-32 h-28 relative group perspective-1000">
+                <div class="w-full h-full absolute transition-transform duration-1000 transform-style-preserve-3d group-hover:rotate-y-360">
+                    <img class="w-full h-full rounded-full absolute backface-hidden"
+                        src="https://cms-images.mmst.eu/jq6pdee2ul1f/2hxMKSMbtvjOK5CG9RCUNA/84a3b36fee7759bcd16a996b9613c70b/homepage-service-schermreparatie.png?q=80&w=264">
+                    <div class="w-full h-full absolute backface-hidden rotate-y-180 flip-horizontal flex items-center justify-center bg-gray-200 rounded-full">
+                        <span class="text-sm font-semibold">Meer info</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-2 underline decoration-transparent transition-all duration-500 hover:decoration-current">Schermreparatie</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="w-32 h-28 relative group perspective-1000">
+                <div class="w-full h-full absolute transition-transform duration-1000 transform-style-preserve-3d group-hover:rotate-y-360">
+                    <img class="w-full h-full rounded-full absolute backface-hidden"
+                        src="https://cms-images.mmst.eu/jq6pdee2ul1f/7ikEpsTR87iBr1hSpXaAtY/81dc78aeaa5ba736060f061b1089c3bf/homepage-service-installatiehulp.png?q=80&w=264">
+                    <div class="w-full h-full absolute backface-hidden rotate-y-180 flip-horizontal flex items-center justify-center bg-gray-200 rounded-full">
+                        <span class="text-sm font-semibold">Meer info</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-2 underline decoration-transparent transition-all duration-500 hover:decoration-current">Installatiehulp</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="w-32 h-28 relative group perspective-1000">
+                <div class="w-full h-full absolute transition-transform duration-1000 transform-style-preserve-3d group-hover:rotate-y-360">
+                    <img class="w-full h-full rounded-full absolute backface-hidden"
+                        src="https://cms-images.mmst.eu/jq6pdee2ul1f/qSl6cpu2EirAK9fw6NCab/23720f9a48f72ecdd21877abfa5e1d12/homepage-service-bestelstatus.png?q=80&w=264">
+                    <div class="w-full h-full absolute backface-hidden rotate-y-180 flip-horizontal flex items-center justify-center bg-gray-200 rounded-full">
+                        <span class="text-sm font-semibold">Meer info</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-2 underline decoration-transparent transition-all duration-500 hover:decoration-current">Bestelstatus</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="w-32 h-28 relative group perspective-1000">
+                <div class="w-full h-full absolute transition-transform duration-1000 transform-style-preserve-3d group-hover:rotate-y-360">
+                    <img class="w-full h-full rounded-full absolute backface-hidden"
+                        src="https://cms-images.mmst.eu/jq6pdee2ul1f/2AFZob8ZBxJEFMVm8liwCn/6557adee0ce60698c45453a160dfa07b/mymediamarkt-masthead-small.jpg?q=80&w=264">
+                    <div class="w-full h-full absolute backface-hidden rotate-y-180 flip-horizontal flex items-center justify-center bg-gray-200 rounded-full">
+                        <span class="text-sm font-semibold">Meer info</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-2 underline decoration-transparent transition-all duration-500 hover:decoration-current">myMediaMarkt</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="w-32 h-28 relative group perspective-1000">
+                <div class="w-full h-full absolute transition-transform duration-1000 transform-style-preserve-3d group-hover:rotate-y-360">
+                    <img class="w-full h-full rounded-full absolute backface-hidden"
+                        src="https://cms-images.mmst.eu/jq6pdee2ul1f/6WQUWw9i2opb6Xl0ofxu9J/5edf1ac3d072e99a390582b88a43c165/homepage-service-winkels.png?q=80&w=264">
+                    <div class="w-full h-full absolute backface-hidden rotate-y-180 flip-horizontal flex items-center justify-center bg-gray-200 rounded-full">
+                        <span class="text-sm font-semibold">Meer info</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-2 underline decoration-transparent transition-all duration-500 hover:decoration-current">Zoek een winkel</a>
+        </div>
+    </div>
+</section>
+
 
     <footer class="py-12 bg-zinc-200 text-white">
         <div class="flex-colum pl-22 pb-16">
