@@ -41,24 +41,39 @@
                     </a>
 
                     <div class="flex items-center space-x-4">
-                        <div class="relative">
-                            <button id="dropdownButton" class="bg-red-600 border-2 border-white text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 pt-3 pb-3 pl-6 pr-6">
-                                <svg
-                                    viewBox="0 0 80 80"
-                                    class="w-6 h-6 text-gray-800 dark:text-white"
-                                    fill="currentColor">
-                                    <path d="M4.726 9.507c-2.66 0-4.56 2.279-4.56 4.938s2.28
-                                    4.56 4.94 4.56h70.283c2.66 0 4.56-1.9 4.56-4.56s-1.9-4.938-4.56-4.938zm0 25.834c-2.66 0-4.56 1.9-4.56 4.559s2.28 4.559 4.94
-                                    4.559h70.283c2.66 0 4.56-1.9 4.56-4.56s-1.9-4.558-4.56-4.558zm0 25.454c-2.66 0-4.94 2.28-4.94 4.939s2.28 4.559 4.94 4.559H75.01c2.659
-                                    0 4.938-2.28 4.938-4.94s-2.28-4.938-4.938-4.938H4.726z"/>
-                                </svg>
-                                Alle categorieen
-                            </button>
+                    <div class="relative">
+                        <button onclick="toggleSidebar()" class="bg-red-600 text-white p-4 rounded-lg flex items-center gap-2 border border-white font-semibold">
+                            <svg
+                                viewBox="0 0 80 80"
+                                class="w-6 h-6 text-white"
+                                fill="currentColor">
+                                <path d="M4.726 9.507c-2.66 0-4.56 2.279-4.56 4.938s2.28 4.56 4.94 4.56h70.283c2.66 0 4.56-1.9 4.56-4.56s-1.9-4.938-4.56-4.938zm0 25.834c-2.66 0-4.56 1.9-4.56 4.559s2.28 4.559 4.94 4.559h70.283c2.66 0 4.56-1.9 4.56-4.56s-1.9-4.558-4.56-4.558zm0 25.454c-2.66 0-4.94 2.28-4.94 4.939s2.28 4.559 4.94 4.559H75.01c2.659 0 4.938-2.28 4.938-4.94s-2.28-4.938-4.938-4.938H4.726z"/>
+                            </svg>
+                            Alle categorieën
+                        </button>
 
-                            <div id="dropdownMenu" class="absolute hidden bg-white text-gray-700 shadow-lg mt-2 rounded-lg w-40">
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 1</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 2</a>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 3</a>
+                            <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-white text-black transition-transform transform -translate-x-full">
+                                <div class="flex justify-end p-4">
+                                    <button onclick="toggleSidebar()" class="text-white">
+                                        <span class="block w-6 h-0.5 bg-black mb-2"></span>
+                                        <span class="block w-6 h-0.5 bg-black mb-2"></span>
+                                        <span class="block w-6 h-0.5 bg-black"></span>
+                                    </button>
+                                </div>
+                                <div class="list px-4 py-8">
+                                    <div class="item mb-4">
+                                        <a href="https://www.pixoverlab.com/" target="_blank" class="text-black hover:text-gray-600">Pixover Lab</a>
+                                    </div>
+                                    <div class="item mb-4">
+                                        <a href="#" class="text-black hover:text-gray-400">About us</a>
+                                    </div>
+                                    <div class="item mb-4">
+                                        <a href="#" class="text-black hover:text-gray-400">Gallery</a>
+                                    </div>
+                                    <div class="item mb-4">
+                                        <a href="#" class="text-black hover:text-gray-400">Contact us</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -92,7 +107,7 @@
                     <div class="flex flex-row space-x-2">
                     <div>
                         <button class="bg-white rounded-full w-12 h-12 flex items-center justify-center">
-                            <svg class="w-6 h-6 fill-current text-black font-bold" viewBox="0 0 20 20">
+                            <svg class="w-6 h-6 fill-current text-white font-bold" viewBox="0 0 20 20">
                                 <path
                                 stroke="black"
                                 stroke-width="1"
@@ -102,7 +117,7 @@
                     </div>
                     <div>
                         <button class="bg-white rounded-full w-12 h-12 flex items-center justify-center">
-                            <svg class="w-6 h-6 fill-current text-black" viewBox="0 0 20 20">
+                            <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 20 20">
                                 <path
                                 stroke="black"
                                 stroke-width="1"
@@ -195,15 +210,14 @@
         </div>
     </section>
     <section class="py-16">
-    <div class="relative overflow-hidden">
         <div id="carousel" class="carousel-container flex transition-transform duration-500 ease-in-out">
             @foreach ($products->chunk(4) as $chunk)
                 @foreach ($chunk as $product)
                     <div class="product w-full md:w-1/4 p-4">
-                        <div class="bg-white p-4 shadow rounded-lg">
+                        <div class="bg-white p-4 shadow rounded-lg flex flex-col min-h-[400px]">
                             <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-t-lg">
                             <h2 class="text-xl font-semibold mt-2">{{ $product->name }}</h2>
-                            <p class="text-gray-500">{{ $product->description }}</p>
+                            <p class="text-gray-500 flex-1">{{ Str::limit($product->description, 50, '...') }}</p>
                             <p class="text-lg font-bold mt-2">€{{ number_format($product->price, 2) }}</p>
 
                             <div class="flex mt-1" id="rating-container-{{ $product->id }}">
@@ -226,14 +240,6 @@
                 @endforeach
             @endforeach
         </div>
-
-        <!-- Navigatieknoppen -->
-        <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
-            &#60;
-        </button>
-        <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full">
-            &#62;
-        </button>
     </div>
 </section>
 
@@ -401,6 +407,11 @@
 
 <script>
 
+    function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("-translate-x-full");
+    }
+
     function updateRating(productId, rating) {
         fetch(`/update-rating/${productId}`, {
             method: 'POST',
@@ -473,7 +484,7 @@
 
         updateCarousel();
 
-        setInterval(nextSlide, 4000);
+        setInterval(nextSlide, 5000);
 
         document.getElementById('next').addEventListener('click', nextSlide);
         document.getElementById('prev').addEventListener('click', prevSlide);
