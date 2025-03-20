@@ -17,3 +17,7 @@ Route::get('/', [ProductController::class, 'index']);
 Route::get('/products', [ProductController::class, 'showProducts'])->name('products.index');
 
 Route::post('/update-rating/{product}', [ProductController::class, 'updateRating']);
+
+Route::get('/user', function () {
+    return view('user');
+})->name('user.page');
